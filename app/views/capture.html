@@ -11,16 +11,11 @@
 
 {% block content %}
   <h1 class="govuk-heading-l">Capture reporting data</h1>
-
-  <h2 class="govuk-heading-m">Add new reporting dataset</h2>
-  <p>Created data sets will be automatically matched to the next matched recovery received in the request editor.</p>
   {{ govukButton({
     text: "Create new dataset",
     href: '/capture-new'
   }) }}
 
-  <h2 class="govuk-heading-m">Existing reporting dataset</h2>
-  <p>All created datasets.</p>
   <div class="govuk-warning-text">
     <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
     <strong class="govuk-warning-text__text">
@@ -28,5 +23,43 @@
       It is not possible to remove a dataset that has already been attached to a request
     </strong>
   </div>
+
+  <table class="govuk-table">
+    <caption class="govuk-table__caption govuk-table__caption--s">Existing reporting datasets</caption>
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th scope="col" class="govuk-table__header govuk-table__header--numeric govuk-body-s">FRN</th>
+        <th scope="col" class="govuk-table__header govuk-body-s">Application ID</th>
+        <th scope="col" class="govuk-table__header govuk-table__header--numeric govuk-body-s">Net value</th>
+        <th scope="col" class="govuk-table__header govuk-body-s">Debt type</th>
+        <th scope="col" class="govuk-table__header govuk-table__header--numeric govuk-body-s">Date of Discovery</th>
+        <th scope="col" class="govuk-table__header govuk-body-s">Created by</th>
+        <th scope="col" class="govuk-table__header govuk-table__header--numeric govuk-body-s">Created</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell govuk-table__cell--numeric govuk-body-s">1234567890</td>
+        <td class="govuk-table__cell govuk-body-s">SFIP1234567</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric govuk-body-s">£1,000.00</td>
+        <td class="govuk-table__cell govuk-body-s">Irregular</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric govuk-body-s">19/01/2022</td>
+        <td class="govuk-table__cell govuk-body-s">John Watson</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric govuk-body-s">19/01/2022 10:00</td>
+        <td class="govuk-table__cell govuk-body-s"><a href="#">Remove</a></td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell govuk-table__cell--numeric govuk-body-s">1234567891</td>
+        <td class="govuk-table__cell govuk-body-s">SFIP1234568</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric govuk-body-s">£570.00</td>
+        <td class="govuk-table__cell govuk-body-s">Administrative</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric govuk-body-s">18/01/2022</td>
+        <td class="govuk-table__cell govuk-body-s">Steve Dickinson</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric govuk-body-s">18/01/2022 18:15</td>
+        <td class="govuk-table__cell govuk-body-s">Enriched 19/01/2022 16:34</td>
+      </tr>
+    </tbody>
+  </table>
 
 {% endblock %}
