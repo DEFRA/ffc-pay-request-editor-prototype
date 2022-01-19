@@ -1,7 +1,8 @@
 {% extends "layout.html" %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
 
 {% block pageTitle %}
-  Check your answers
+  Capture
 {% endblock %}
 
 {% block beforeContent %}
@@ -11,5 +12,21 @@
 {% block content %}
   <h1 class="govuk-heading-l">Capture reporting data</h1>
 
+  <h2 class="govuk-heading-m">Add new reporting dataset</h2>
+  <p>Created data sets will be automatically matched to the next matched recovery received in the request editor.</p>
+  {{ govukButton({
+    text: "Create new dataset",
+    href: '/capture-new'
+  }) }}
+
+  <h2 class="govuk-heading-m">Existing reporting dataset</h2>
+  <p>All created datasets.</p>
+  <div class="govuk-warning-text">
+    <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+    <strong class="govuk-warning-text__text">
+      <span class="govuk-warning-text__assistive">Warning</span>
+      It is not possible to remove a dataset that has already been attached to a request
+    </strong>
+  </div>
 
 {% endblock %}
