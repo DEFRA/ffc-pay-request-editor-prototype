@@ -1,2 +1,2 @@
-# ffc-pay-request-editor-prototype
-Prototype for ffc-pay-request-editor
+# FFC Payment Request Editor prototype
+Prototype for [ffc-pay-request-editor](https://github.com/DEFRA/ffc-pay-request-editor)
