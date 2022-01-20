@@ -16,11 +16,19 @@
     href: '/capture-new'
   }) }}
 
+  <div class="search-box govuk-!-width-one-third">
+    <label class="govuk-label govuk-label--s" for="search">
+      Search for data by FRN number
+    </label>
+    <input class="govuk-input" id="search" name="search" type="text" aria-describedby="search-hint" spellcheck="false">
+    <button type="button" class="search-button" data-module="govuk-button">Search</button>
+  </div>
+
   <div class="govuk-warning-text">
     <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
     <strong class="govuk-warning-text__text">
       <span class="govuk-warning-text__assistive">Warning</span>
-      It is not possible to Delete a dataset that has already been attached to a request
+      It is not possible to delete a dataset that has already been attached to a request
     </strong>
   </div>
 
@@ -35,7 +43,7 @@
         <th scope="col" class="govuk-table__header govuk-body-s">Debt type</th>
         <th scope="col" class="govuk-table__header govuk-table__header--numeric govuk-body-s">Date of Discovery</th>
         <th scope="col" class="govuk-table__header govuk-body-s">Created by</th>
-        <th scope="col"></th>
+        <th scope="col" class="govuk-table__header"></th>
       </tr>
     </thead>
     <tbody class="govuk-table__body">

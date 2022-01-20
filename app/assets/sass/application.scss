@@ -16,3 +16,47 @@ $govuk-assets-path: '/govuk/assets/';
 @import "patterns/related-items";
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
+.search-box .govuk-form-group {
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+
+.search-box {
+  position: relative;
+}
+
+.search-box .govuk-input {
+  padding-right: 45px;
+  width: 100%;
+}
+
+.search-box .search-button,
+.search-box .search-button:active {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  border-width: 0 0 0 2px;
+  border-style: solid;
+  border-left-color: #000;
+  box-sizing: border-box;
+  margin-bottom: 0;
+  cursor: pointer;
+  border-radius: 0;
+  padding: 0;
+  width: 38px;
+  height: 36px;
+  background-image: url(../images/search-icon.png);
+  background-repeat: no-repeat;
+  background-position: 2px 50%;
+  text-indent: 115%;
+  overflow: hidden;
+  white-space: nowrap;
+  background-color: #1d70b8;
+  box-shadow: none;
+}
+
+.search-box .search-button:hover, .search-box .search-button:focus,
+.search-box .search-button:active:hover,
+.search-box .search-button:active:focus {
+  background-color: #003078;
+}
