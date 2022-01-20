@@ -1,0 +1,88 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Capture
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+<span class="govuk-caption-l">FRN: 1234567890</span>
+<h1 class="govuk-heading-l">Review edited request for Invoice SFI12345678</h1>
+
+<table class="govuk-table">
+  <caption class="govuk-table__caption govuk-table__caption--s">Header</caption>
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header govuk-body-s">Scheme</th>
+      <th scope="col" class="govuk-table__header govuk-table__header--numeric govuk-body-s">FRN</th>
+      <th scope="col" class="govuk-table__header govuk-body-s">Application ID</th>
+      <th scope="col" class="govuk-table__header govuk-body-s">Invoice</th>
+      <th scope="col" class="govuk-table__header govuk-table__header--numeric govuk-body-s">Request</th>
+      <th scope="col" class="govuk-table__header govuk-table__header--numeric govuk-body-s">Total amount</th>
+      <th scope="col" class="govuk-table__header govuk-table__header--numeric govuk-body-s">Ledger</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell govuk-body-s">SFI</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric govuk-body-s">1234567890</td>
+      <td class="govuk-table__cell govuk-body-s">SFIP1234567</td>
+      <td class="govuk-table__cell govuk-body-s">SFI12345678</td>
+      <td class="govuk-table__cell govuk-table__header--numeric govuk-body-s">2</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric govuk-body-s">£2,000.00</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric govuk-body-s">AP</td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="govuk-table">
+  <caption class="govuk-table__caption govuk-table__caption--s">Lines</caption>
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header govuk-body-s">Description</th>
+      <th scope="col" class="govuk-table__header govuk-body-s">Fund</th>
+      <th scope="col" class="govuk-table__header govuk-body-s">Scheme</th>
+      <th scope="col" class="govuk-table__header govuk-body-s">Account</th>
+      <th scope="col" class="govuk-table__header govuk-table__header--numeric govuk-body-s">Amount</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell govuk-body-s">G00 - Gross value of claim</td>
+      <td class="govuk-table__cell govuk-body-s">DOM00</td>
+      <td class="govuk-table__cell govuk-body-s">80001</td>
+      <td class="govuk-table__cell govuk-body-s">SOS275</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric govuk-body-s">£1,000.00</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell govuk-body-s">G00 - Gross value of claim</td>
+      <td class="govuk-table__cell govuk-body-s">DOM00</td>
+      <td class="govuk-table__cell govuk-body-s">80002</td>
+      <td class="govuk-table__cell govuk-body-s">SOS275</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric govuk-body-s">£1,000.00</td>
+    </tr>
+  </tbody>
+</table>
+
+<form action="/quality-check" method="post" novalidate>
+  <div class="govuk-form-group">
+    <label class="govuk-label govuk-label--s" for="debtType">
+      Check result
+    </label>
+    <select class="govuk-select" id="status" name="status">
+      <option value="true" selected>Pass</option>
+      <option value="false">Fail</option>
+    </select>
+  </div>
+
+  <button class="govuk-button" data-module="govuk-button">
+    Submit
+  </button>
+
+</form>
+
+
+{% endblock %}
