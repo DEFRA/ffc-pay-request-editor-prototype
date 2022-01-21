@@ -2,20 +2,21 @@
 {% from "govuk/components/button/macro.njk" import govukButton %}
 
 {% block pageTitle %}
-  Capture
+Capture
 {% endblock %}
 
 {% block beforeContent %}
-  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
 {% endblock %}
 
 {% block content %}
-  <h1 class="govuk-heading-l">Capture reporting data</h1>
-  {{ govukButton({
-    text: "Create new dataset",
-    href: '/capture-new'
-  }) }}
+<h1 class="govuk-heading-l">Capture reporting data</h1>
+{{ govukButton({
+text: "Create new dataset",
+href: '/capture-new'
+}) }}
 
+<div class="govuk-!-padding-bottom-3">
   <div class="search-box govuk-!-width-one-third">
     <label class="govuk-label govuk-label--s" for="search">
       Search for data by FRN number
@@ -23,91 +24,88 @@
     <input class="govuk-input" id="search" name="search" type="text" aria-describedby="search-hint" spellcheck="false">
     <button type="button" class="search-button" data-module="govuk-button">Search</button>
   </div>
+</div>
 
-  <div class="govuk-warning-text">
-    <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-    <strong class="govuk-warning-text__text">
-      <span class="govuk-warning-text__assistive">Warning</span>
-      It is not possible to delete a dataset that has already been attached to a request
-    </strong>
-  </div>
+<div class="govuk-inset-text">
+  It is not possible to delete a dataset that has already been attached to a request
+</div>
 
-  <table class="govuk-table">
-    <caption class="govuk-table__caption govuk-table__caption--s">Existing reporting datasets</caption>
-    <thead class="govuk-table__head">
-      <tr class="govuk-table__row">
-        <th scope="col" class="govuk-table__header govuk-body-s">Scheme</th>
-        <th scope="col" class="govuk-table__header govuk-body-s">FRN</th>
-        <th scope="col" class="govuk-table__header govuk-body-s">Application ID</th>
-        <th scope="col" class="govuk-table__header govuk-table__header--numeric govuk-body-s">Net value</th>
-        <th scope="col" class="govuk-table__header govuk-body-s">Debt type</th>
-        <th scope="col" class="govuk-table__header govuk-table__header--numeric govuk-body-s">Date of Discovery</th>
-        <th scope="col" class="govuk-table__header govuk-body-s">Created by</th>
-        <th scope="col" class="govuk-table__header"></th>
-      </tr>
-    </thead>
-    <tbody class="govuk-table__body">
-      <tr class="govuk-table__row">
-        <td class="govuk-table__cell govuk-body-s">SFI Pilot</td>
-        <td class="govuk-table__cell govuk-table__cell--numeric govuk-body-s">1234567890</td>
-        <td class="govuk-table__cell govuk-body-s">SFIP1234567</td>
-        <td class="govuk-table__cell govuk-table__cell--numeric govuk-body-s">£1,000.00</td>
-        <td class="govuk-table__cell govuk-body-s">Irregular</td>
-        <td class="govuk-table__cell govuk-table__cell--numeric govuk-body-s">19/01/2022</td>
-        <td class="govuk-table__cell govuk-body-s">John Watson</td>
-        <td class="govuk-table__cell govuk-body-s"><a href="#">Delete</a></td>
-      </tr>
-      <tr class="govuk-table__row">
-        <td class="govuk-table__cell govuk-body-s">SFI</td>
-        <td class="govuk-table__cell govuk-table__cell--numeric govuk-body-s">1234567891</td>
-        <td class="govuk-table__cell govuk-body-s">SFIP1234568</td>
-        <td class="govuk-table__cell govuk-table__cell--numeric govuk-body-s">£570.00</td>
-        <td class="govuk-table__cell govuk-body-s">Administrative</td>
-        <td class="govuk-table__cell govuk-table__cell--numeric govuk-body-s">18/01/2022</td>
-        <td class="govuk-table__cell govuk-body-s">Steve Dickinson</td>
-        <td class="govuk-table__cell govuk-body-s">Attached</td>
-      </tr>
-      <tr class="govuk-table__row">
-        <td class="govuk-table__cell govuk-body-s">SFI</td>
-        <td class="govuk-table__cell govuk-table__cell--numeric govuk-body-s">1234567892</td>
-        <td class="govuk-table__cell govuk-body-s">SFIP1234568</td>
-        <td class="govuk-table__cell govuk-table__cell--numeric govuk-body-s">£4,078.42</td>
-        <td class="govuk-table__cell govuk-body-s">Irregular</td>
-        <td class="govuk-table__cell govuk-table__cell--numeric govuk-body-s">19/01/2022</td>
-        <td class="govuk-table__cell govuk-body-s">Simon Dunn</td>
-        <td class="govuk-table__cell govuk-body-s"><a href="#">Delete</a></td>
-      </tr>
-      <tr class="govuk-table__row">
-        <td class="govuk-table__cell govuk-body-s">SFI</td>
-        <td class="govuk-table__cell govuk-table__cell--numeric govuk-body-s">1234567894</td>
-        <td class="govuk-table__cell govuk-body-s">SFIP1234569</td>
-        <td class="govuk-table__cell govuk-table__cell--numeric govuk-body-s">£71.00</td>
-        <td class="govuk-table__cell govuk-body-s">Irregular</td>
-        <td class="govuk-table__cell govuk-table__cell--numeric govuk-body-s">16/01/2022</td>
-        <td class="govuk-table__cell govuk-body-s">Paul Popa</td>
-        <td class="govuk-table__cell govuk-body-s"><a href="#">Delete</a></td>
-      </tr>
-      <tr class="govuk-table__row">
-        <td class="govuk-table__cell govuk-body-s">SFI</td>
-        <td class="govuk-table__cell govuk-table__cell--numeric govuk-body-s">1234567895</td>
-        <td class="govuk-table__cell govuk-body-s">SFIP1234564</td>
-        <td class="govuk-table__cell govuk-table__cell--numeric govuk-body-s">£8.42</td>
-        <td class="govuk-table__cell govuk-body-s">Irregular</td>
-        <td class="govuk-table__cell govuk-table__cell--numeric govuk-body-s">19/01/2022</td>
-        <td class="govuk-table__cell govuk-body-s">Marc Templeton</td>
-        <td class="govuk-table__cell govuk-body-s"><a href="#">Delete</a></td>
-      </tr>
-      <tr class="govuk-table__row">
-        <td class="govuk-table__cell govuk-body-s">SFI Pilot</td>
-        <td class="govuk-table__cell govuk-table__cell--numeric govuk-body-s">1234567897</td>
-        <td class="govuk-table__cell govuk-body-s">SFIP1234566</td>
-        <td class="govuk-table__cell govuk-table__cell--numeric govuk-body-s">£18,881.99</td>
-        <td class="govuk-table__cell govuk-body-s">Irregular</td>
-        <td class="govuk-table__cell govuk-table__cell--numeric govuk-body-s">19/01/2022</td>
-        <td class="govuk-table__cell govuk-body-s">Abidemi Adio</td>
-        <td class="govuk-table__cell govuk-body-s">Attached</td>
-      </tr>
-    </tbody>
-  </table>
+<table class="govuk-table">
+  <caption class="govuk-table__caption govuk-table__caption--s">Existing reporting datasets</caption>
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header govuk-body-s">Scheme</th>
+      <th scope="col" class="govuk-table__header govuk-body-s">FRN</th>
+      <th scope="col" class="govuk-table__header govuk-body-s">Application ID</th>
+      <th scope="col" class="govuk-table__header govuk-table__header--numeric govuk-body-s">Net value</th>
+      <th scope="col" class="govuk-table__header govuk-body-s">Debt type</th>
+      <th scope="col" class="govuk-table__header govuk-table__header--numeric govuk-body-s">Date of Discovery</th>
+      <th scope="col" class="govuk-table__header govuk-body-s">Created by</th>
+      <th scope="col" class="govuk-table__header"></th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell govuk-body-s">SFI Pilot</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric govuk-body-s">1234567890</td>
+      <td class="govuk-table__cell govuk-body-s">SFIP1234567</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric govuk-body-s">£1,000.00</td>
+      <td class="govuk-table__cell govuk-body-s">Irregular</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric govuk-body-s">19/01/2022</td>
+      <td class="govuk-table__cell govuk-body-s">John Watson</td>
+      <td class="govuk-table__cell govuk-body-s"><a href="#">Delete</a></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell govuk-body-s">SFI</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric govuk-body-s">1234567891</td>
+      <td class="govuk-table__cell govuk-body-s">SFIP1234568</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric govuk-body-s">£570.00</td>
+      <td class="govuk-table__cell govuk-body-s">Administrative</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric govuk-body-s">18/01/2022</td>
+      <td class="govuk-table__cell govuk-body-s">Steve Dickinson</td>
+      <td class="govuk-table__cell govuk-body-s">Attached</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell govuk-body-s">SFI</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric govuk-body-s">1234567892</td>
+      <td class="govuk-table__cell govuk-body-s">SFIP1234568</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric govuk-body-s">£4,078.42</td>
+      <td class="govuk-table__cell govuk-body-s">Irregular</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric govuk-body-s">19/01/2022</td>
+      <td class="govuk-table__cell govuk-body-s">Simon Dunn</td>
+      <td class="govuk-table__cell govuk-body-s"><a href="#">Delete</a></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell govuk-body-s">SFI</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric govuk-body-s">1234567894</td>
+      <td class="govuk-table__cell govuk-body-s">SFIP1234569</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric govuk-body-s">£71.00</td>
+      <td class="govuk-table__cell govuk-body-s">Irregular</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric govuk-body-s">16/01/2022</td>
+      <td class="govuk-table__cell govuk-body-s">Paul Popa</td>
+      <td class="govuk-table__cell govuk-body-s"><a href="#">Delete</a></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell govuk-body-s">SFI</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric govuk-body-s">1234567895</td>
+      <td class="govuk-table__cell govuk-body-s">SFIP1234564</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric govuk-body-s">£8.42</td>
+      <td class="govuk-table__cell govuk-body-s">Irregular</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric govuk-body-s">19/01/2022</td>
+      <td class="govuk-table__cell govuk-body-s">Marc Templeton</td>
+      <td class="govuk-table__cell govuk-body-s"><a href="#">Delete</a></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell govuk-body-s">SFI Pilot</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric govuk-body-s">1234567897</td>
+      <td class="govuk-table__cell govuk-body-s">SFIP1234566</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric govuk-body-s">£18,881.99</td>
+      <td class="govuk-table__cell govuk-body-s">Irregular</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric govuk-body-s">19/01/2022</td>
+      <td class="govuk-table__cell govuk-body-s">Abidemi Adio</td>
+      <td class="govuk-table__cell govuk-body-s">Attached</td>
+    </tr>
+  </tbody>
+</table>
 
 {% endblock %}

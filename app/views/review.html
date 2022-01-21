@@ -69,13 +69,26 @@ Capture
 
 <form action="/quality-check" method="post" novalidate>
   <div class="govuk-form-group">
-    <label class="govuk-label govuk-label--s" for="debtType">
-      Check result
+    <label class="govuk-label govuk-label--s" for="status">
+      Has the request been edited correctly?
     </label>
-    <select class="govuk-select" id="status" name="status">
-      <option value="true" selected>Pass</option>
-      <option value="false">Fail</option>
-    </select>
+    <div id="status-hint" class="govuk-hint">
+      Correctly edited requests will be immediately released from the editor.
+    </div>
+    <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="status" name="status" type="radio" value="month">
+          <label class="govuk-label govuk-radios__label" for="status">
+            Yes
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="status-2" name="status" type="radio" value="year">
+          <label class="govuk-label govuk-radios__label" for="status-2">
+            No
+          </label>
+        </div>
+      </div>
   </div>
 
   <button class="govuk-button" data-module="govuk-button">

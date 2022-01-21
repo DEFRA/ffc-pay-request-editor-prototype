@@ -17,10 +17,20 @@
       <label class="govuk-label govuk-label--s" for="debtType">
         Type of debt
       </label>
-      <select class="govuk-select" id="debtType" name="debtType">
-        <option value="admin" selected>Administrative</option>
-        <option value="irr">Irregular</option>
-      </select>
+      <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="debtType" name="debtType" type="radio" value="month">
+          <label class="govuk-label govuk-radios__label" for="debtType">
+            Irregular
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="debtType-2" name="debtType" type="radio" value="year">
+          <label class="govuk-label govuk-radios__label" for="debtType-2">
+            Administrative
+          </label>
+        </div>
+      </div>
     </div>
 
     <div class="govuk-form-group">
