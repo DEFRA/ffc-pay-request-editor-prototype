@@ -1,22 +1,65 @@
 {% extends "layout.html" %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
 
 {% block content %}
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
 
-    <h1 class="govuk-heading-xl">Request editor</h1>
+  <h1 class="govuk-heading-xl">Request editor</h1>
 
-    <h2 class="govuk-heading-m"><a href="/capture">Capture reporting data</a></h2>
-    <p>Capture reporting data for recoveries prior to arrival in request editor.</p>
+  <div class="govuk-cards govuk-cards--2">
 
-    <h2 class="govuk-heading-m"><a href="/enrich">Enrich pending requests</a></h2>
-    <p>Enrich recoveries already in request editor.</p>
+    <div class="govuk-cards--2__item govuk-card--dashboard">
+      <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Unattached reporting datasets</h2>
+      <p class="govuk-heading-xl govuk-!-margin-bottom-5">
+        46
+      </p>
+      <ul class="govuk-list">
+        <li>
+          <a href="/capture" class="govuk-link">View unattached datasets</a>
+        </li>
+      </ul>
+    </div>
 
-    <h2 class="govuk-heading-m"><a href="/quality-check">Quality check request editing</a></h2>
-    <p>Review changes made to requests.</p>
+    <div class="govuk-cards--2__item govuk-card--dashboard">
+      <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Requests awaiting reporting data</h2>
+      <p class="govuk-heading-xl govuk-!-margin-bottom-5">
+        25
+      </p>
+      <ul class="govuk-list">
+        <li>
+          <a href="/enrich" class="govuk-link">View awaiting reporting data</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="govuk-cards--2__item govuk-card--dashboard">
+      <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Requests awaiting quality check</h2>
+      <p class="govuk-heading-xl govuk-!-margin-bottom-5">
+        3
+      </p>
+      <ul class="govuk-list">
+        <li>
+          <a href="/quality-check" class="govuk-link">View awaiting quality check</a>
+        </li>
+      </ul>
+    </div>
 
   </div>
+
+  <h2 class="govuk-heading-m">Capture new reporting dataset</h2>
+
+  <p class="govuk-body">
+    Datasets are automatically attached to matching requests when they are received in the request editor.
+  </p>
+
+  {{ govukButton({
+  text: "Create new dataset",
+  href: '/capture-new',
+  isStartButton: true
+  }) }}
+
+
 </div>
 
 {% endblock %}
